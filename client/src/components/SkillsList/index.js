@@ -39,6 +39,12 @@ const SkillsList = ({ skills, isLoggedInUser = false }) => {
           skills.map((skill) => (
             <div key={skill} className="col-12 col-xl-6">
               <div className="card mb-3">
+              <button
+                      className="btn btn-sm btn-danger ml-auto"
+                      onClick={() => handleRemoveSkill(skill)}
+                    >
+                      +
+                    </button>
                 <h4 className="card-header bg-dark text-light p-2 m-0 display-flex align-center">
                   <span>{skill}</span>
                   {isLoggedInUser && (
