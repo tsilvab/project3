@@ -924,7 +924,7 @@ a:hover {
 }
 
 .bg-info {
-  background-color: #1bbc9b !important;
+  background-color: #1b5bbc !important;
 }
 
 .bg-danger {
@@ -1172,6 +1172,7 @@ label form [type='radio'] {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  background-color: #aaa3a3ad;
 }
 
 .container.container-fluid {
