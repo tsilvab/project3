@@ -1,6 +1,7 @@
-const { AuthenticationError } = require('apollo-server-express');
-const { Profile } = require('../models');
-const { signToken } = require('../utils/auth');
+const { AuthenticationError } = require("apollo-server-express");
+const { Profile } = require("../models");
+const { signToken } = require("../utils/auth");
+const mongoose = require("mongoose");
 
 const resolvers = {
   Query: {
@@ -16,7 +17,7 @@ const resolvers = {
       if (context.user) {
         return Profile.findOne({ _id: context.user._id });
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
 
@@ -31,13 +32,13 @@ const resolvers = {
       const profile = await Profile.findOne({ email });
 
       if (!profile) {
-        throw new AuthenticationError('No profile with this email found!');
+        throw new AuthenticationError("No profile with this email found!");
       }
 
       const correctPw = await profile.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect password!');
+        throw new AuthenticationError("Incorrect password!");
       }
 
       const token = signToken(profile);
@@ -51,7 +52,7 @@ const resolvers = {
         return Profile.findOneAndUpdate(
           { _id: profileId },
           {
-            $addToSet: { skills: skill },
+            $addToSet: { skills: skill + "-0" },
           },
           {
             new: true,
@@ -60,25 +61,45 @@ const resolvers = {
         );
       }
       // If user attempts to execute this mutation and isn't logged in, throw an error
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
+    },
+    addEndorsement: async (parent, { profileId, skill }, context) => {
+      if (context.user) {
+      const prof = Profile.find({
+        $and: [
+          { _id: mongoose.Types.ObjectId(profileId) },
+          {
+            skills: {
+              $regex: `^${skill.toLowerCase()}$`,
+              $options: "i",
+            },
+          },
+        ],
+      });
+
+
+      return { prof };
+      }
+      // If user attempts to execute this mutation and isn't logged in, throw an error
+      throw new AuthenticationError("You need to be logged in!");
     },
     // Set up mutation so a logged in user can only remove their profile and no one else's
     removeProfile: async (parent, args, context) => {
       if (context.user) {
         return Profile.findOneAndDelete({ _id: context.user._id });
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
     // Make it so a logged in user can only remove a skill from their own profile
     removeSkill: async (parent, { skill }, context) => {
       if (context.user) {
         return Profile.findOneAndUpdate(
           { _id: context.user._id },
-          { $pull: { skills: skill } },
+          { $pull: { skills: skill.split("-")[0] } },
           { new: true }
         );
       }
-      throw new AuthenticationError('You need to be logged in!');
+      throw new AuthenticationError("You need to be logged in!");
     },
   },
 };
