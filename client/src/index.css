@@ -901,11 +901,11 @@ a:hover {
 }
 
 .text-dark {
-  color: #1a1a1a !important;
+  color: #000000 !important;
 }
 
 .text-white {
-  color: #ffffff !important;
+  color: #94b2f1 !important;
 }
 
 .text-black {
@@ -922,7 +922,7 @@ a:hover {
 }
 
 .bg-info {
-  background-color: #1a1a1a !important;
+  background-color: #94b2f1 !important;
 }
 
 .bg-danger {
@@ -981,7 +981,7 @@ a:hover {
   border: 1px solid transparent;
   outline: none;
   color: #1a1a1a;
-  background-color: #aeaeae;
+  background-color: #b9ccf5;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
@@ -1028,21 +1028,21 @@ a:hover {
 }
 
 .btn.btn-info {
-  background-color: #1bbc9b;
+  background-color: #94b2f1;
   color: #ffffff;
 }
 
 .btn.btn-info:hover {
-  background-color: #31e1bd;
+  background-color: #c9caca;
 }
 
 .btn.btn-light {
-  background-color: #d9e9e8;
-  color: #1a1a1a;
+  background-color: #94b2f1;
+  color: #d9e9e8;
 }
 
 .btn.btn-light:hover {
-  background-color: #84b8b4;
+  background-color: #c9caca;
 }
 
 .btn.btn-dark {
@@ -1170,7 +1170,7 @@ label form [type='radio'] {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #aaa3a3ad;
+  background-color: #e6eaeead;
 }
 
 .container.container-fluid {

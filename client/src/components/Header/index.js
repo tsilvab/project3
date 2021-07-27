@@ -13,10 +13,10 @@ const Header = () => {
       <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
         <Link className="text-dark" to="/">
           <h1 className="m-0" style={{ fontSize: '3rem' }}>
-            Skill & Endorsements
+            Intel Connections
           </h1>
         </Link>
-        <p className="m-0" style={{ fontSize: '1.75rem', fontWeight: '700' }}>
+        <p className="m-0" style={{ fontSize: '1.25rem', fontWeight: '700' }}>
         Manage your professional identity. Build and engage with your professional network. Access knowledge, insights and opportunities.
         </p>
         <div>
@@ -25,7 +25,7 @@ const Header = () => {
               <Link className="btn btn-lg btn-primary m-2" to="/me">
                 View My Profile
               </Link>
-              <button className="btn btn-lg btn-light m-2" onClick={logout}>
+              <button className="btn btn-lg btn-primary m-2" onClick={logout}>
                 Logout
               </button>
             </>
@@ -34,7 +34,7 @@ const Header = () => {
               <Link className="btn btn-lg btn-primary m-2" to="/login">
                 Login
               </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/signup">
+              <Link className="btn btn-lg btn-primary m-2" to="/signup">
                 Signup
               </Link>
             </>
