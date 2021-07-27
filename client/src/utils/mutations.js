@@ -43,3 +43,13 @@ export const REMOVE_SKILL = gql`
     }
   }
 `;
+
+export const ADD_ENDORSEMENT = gql`
+  mutation addSkill($profileId: ID!, $skill: String!) {
+    addSkill(profileId: $profileId, skill: $skill) {
+      _id
+      name
+      skills
+    }
+  }
+`;
