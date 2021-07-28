@@ -18,7 +18,7 @@ const Home = () => {
           ) : (
             <ProfileList
               profiles={profiles}
-              title="Here's the current roster of friends. Add a new skill!"
+              title="Skills & Endorsements. Add a new skill or endorsement!"
             />
           )}
         </div>

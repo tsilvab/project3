@@ -1,28 +1,61 @@
-# Pass JWT to Resolver with Context (Server-side)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-In this demo, you will verify if a token is valid and carry
+# Title
 
-## Instructions
+Project 3
 
-* Run `npm install` and `npm run seed` to set up the database.
+# Description
 
-* Open [server.js](server/server.js) and explain the following:
+```md
+AS A TECH PROFESSIONAL
+I WANT to endorse or recognize a professional's skill
+SO THAT I could build or maintain strong connections with people in my network
+```
 
-  * We can add another option to our Apollo Server configuration called `context`, which is a lot like middleware in Express.
+# Screen Shots
 
-  * This will allow us to intercept any request to the server and check if there's a valid JWT before the request gets to the resolver.
+![image](https://user-images.githubusercontent.com/61666288/127243146-5ed62a60-6b88-4ca4-806b-0399efcee7cb.png)
 
-* Open [auth.js](server/utils/auth.js) and explain the `authMiddleware` function:
+![image](https://user-images.githubusercontent.com/61666288/127243055-22dcc4cd-93aa-4773-9ae5-fb4603a8b083.png)
 
-  * Whenever we make a request to our server, we will check if there's a token with the request and attempt to verify and decode it if there is.
+![image](https://user-images.githubusercontent.com/61666288/127243107-e3990a42-a80d-439e-8ee7-988a149d53e6.png)
 
-  * We use the `return` statement to return the `req` object, either modified with user data or not modified at all, and the request will continue to go to its intended resolver function.
+# Installation
 
-* Open [resolvers.js](server/schemas/resolvers.js) and explain the following:
+This app is installed using Heroku,
 
-  * Any time we need to implement authentication on a query or mutation, we can add a third parameter called `context` to the resolver function.
+# Test
 
-  * The `context` object is whatever has been returned from our `authMiddleware` function, so it may or may not include a `user` property depending on the status of the JSON Web Token.
+In order to test this application the user must open the terminal, npm install, npm install build, npm install develop, npm run seed, npm run start.
 
-  * If there is a `user` property, we can assume the user's token has been verified and the `user` property now holds data about the user that we stored in the token itself.
+# Contact Info
 
+GitHub Username: jorozco4, jos23867, tsilvab, polodre
+
+Names: Jesse Orozco, Jose Guerrero, Thefany Silva, & Andre Lucas
+
+# Project Demo App
+
+Deployed on Heroku: https://secure-lowlands-30336.herokuapp.com/
+
+# MIT License
+
+Copyright (c) [2021] [Jesse Orozco]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

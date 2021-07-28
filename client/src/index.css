@@ -57,7 +57,7 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace;
+  font-family:'Noto Sans SC', sans-serif;
   /* 1 */
   font-size: 1em;
   /* 2 */
@@ -100,7 +100,7 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
+  font-family: 'Noto Sans SC', sans-serif;
   /* 1 */
   font-size: 1em;
   /* 2 */
@@ -356,9 +356,7 @@ body {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol';
+  font-family: 'Noto Sans SC', sans-serif;
   font-size: 16px;
   color: #1a1a1a;
 }
@@ -369,7 +367,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'Noto Sans SC', sans-serif;
   margin: 0 0 0.5rem;
   line-height: 1.25;
 }
@@ -895,19 +893,19 @@ a:hover {
 }
 
 .text-default {
-  color: #aeaeae !important;
+  color: #cac9c9 !important;
 }
 
 .text-light {
-  color: #d9e9e8 !important;
+  color: #94b2f1 !important;
 }
 
 .text-dark {
-  color: #1a1a1a !important;
+  color: #000000 !important;
 }
 
 .text-white {
-  color: #ffffff !important;
+  color: #94b2f1 !important;
 }
 
 .text-black {
@@ -915,7 +913,7 @@ a:hover {
 }
 
 .text-link {
-  color: #1b89bc !important;
+  color: #1a1a1a !important;
 }
 
 /* BACKGROUND UTILS */
@@ -924,7 +922,7 @@ a:hover {
 }
 
 .bg-info {
-  background-color: #1b5bbc !important;
+  background-color: #94b2f1 !important;
 }
 
 .bg-danger {
@@ -983,7 +981,7 @@ a:hover {
   border: 1px solid transparent;
   outline: none;
   color: #1a1a1a;
-  background-color: #aeaeae;
+  background-color: #b9ccf5;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
@@ -1030,21 +1028,21 @@ a:hover {
 }
 
 .btn.btn-info {
-  background-color: #1bbc9b;
+  background-color: #94b2f1;
   color: #ffffff;
 }
 
 .btn.btn-info:hover {
-  background-color: #31e1bd;
+  background-color: #c9caca;
 }
 
 .btn.btn-light {
-  background-color: #d9e9e8;
-  color: #1a1a1a;
+  background-color: #94b2f1;
+  color: #d9e9e8;
 }
 
 .btn.btn-light:hover {
-  background-color: #84b8b4;
+  background-color: #c9caca;
 }
 
 .btn.btn-dark {
@@ -1172,7 +1170,7 @@ label form [type='radio'] {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #aaa3a3ad;
+  background-color: #e6eaeead;
 }
 
 .container.container-fluid {

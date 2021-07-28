@@ -6,7 +6,14 @@ const typeDefs = gql`
     name: String
     email: String
     password: String
-    skills: [String]!
+    skills: [Skills]!
+  }
+
+  type Skills {
+
+    name: String!
+    endorsements: int
+
   }
 
   type Auth {
